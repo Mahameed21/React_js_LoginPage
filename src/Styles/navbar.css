@@ -1,0 +1,24 @@
+.navbarContainer{
+    width: '100%';
+    background-color: grey;
+    height: 100px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    padding-right: 100px;
+}
+.navLink{
+    color: white;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.active{
+    color: darkorange;
+}
+.navLink:hover{
+color: black;
+text-decoration: underline;
+}
