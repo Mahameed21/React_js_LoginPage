@@ -1,0 +1,36 @@
+.homeMainContainer{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.headerText{
+    color: black;
+    font-size: 20;
+    justify-content: center;
+    text-align: center;
+}
+.movieGrid {
+    display:inline-flex;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Automatically adjusts columns based on screen size */
+    gap: 20px;  /* Space between the cards */
+    flex-wrap: wrap;
+  }
+.movieListCard{
+    flex-direction: row;
+    display: flex;
+    width: 400px;
+    height: 200px;
+    border: 1px solid cyan;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.imageStyle{
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit:fill;
+}

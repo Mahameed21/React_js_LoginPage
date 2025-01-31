@@ -3,7 +3,7 @@ import Home from "./Screens/home";
 import Login from "./Screens/login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./Screens/profile";
-import Navbar from "./Screens/navbar";
+import Navbar from "./Components/navbar";
 import { useState } from "react";
 import { UserProvider } from "./context/context";
 
@@ -20,11 +20,11 @@ function App() {
   return (
     <UserProvider>
     <Router>
-      {isLoggedIn && <Navbar />}
-
+      {/* {isLoggedIn && <Navbar />} */}
+    <Navbar/>
       <Routes>
-        <Route path="/" element={<Login onLogin={handleLogin} />} />
-        <Route path="/home" element={<Home />} />
+        {/* <Route path="/" element={<Login onLogin={handleLogin} />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
