@@ -1,36 +1,106 @@
-.homeMainContainer{
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+.homeMainContainer {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
-.headerText{
-    color: black;
-    font-size: 20;
-    justify-content: center;
-    text-align: center;
+
+.headerText {
+  color: black;
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
 }
+
+/* Adjust the grid to show 3 cards per row */
 .movieGrid {
-    display:inline-flex;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  /* Automatically adjusts columns based on screen size */
-    gap: 20px;  /* Space between the cards */
-    flex-wrap: wrap;
-  }
-.movieListCard{
-    flex-direction: row;
-    display: flex;
-    width: 400px;
-    height: 200px;
-    border: 1px solid cyan;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Ensure each movie card has a fixed size */
+.movieCard {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Fixed height */
+  perspective: 1000px; /* Creates 3D space for the flip effect */
+}
+
+.movieCardInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  border: 1px solid cyan;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  transform-style: preserve-3d; /* Allows the front and back to stack */
 }
-.imageStyle{
-    width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    object-fit:fill;
+
+/* Flip effect on hover */
+.movieCard:hover .movieCardInner {
+  transform: rotateY(180deg);
+}
+
+/* Styling for the front and back of the card */
+.movieCardFront,
+.movieCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back side when flipped */
+}
+
+.movieCardFront {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Image styles */
+.imageStyle {
+  width: 200px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Changed from 'fill' to 'cover' to keep aspect ratio */
+  margin-right: 10px;
+}
+
+/* Movie data displayed on front of the card */
+.movieDataStyle {
+  flex-direction: column;
+  display: flex;
+  padding: 10px;
+  color: #333;
+}
+
+.movieCardBack {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  transform: rotateY(180deg); /* Initially hide the back */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movieCardBack h4 {
+  margin-bottom: 10px;
+}
+
+.movieCardBack p {
+  font-size: 14px;
+  margin-bottom: 5px;
 }

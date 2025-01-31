@@ -1,22 +1,31 @@
+import React from 'react';
+import "../Styles/home.css"; // Make sure to import your CSS here.
 
-import '../Styles/home.css'
-const MovieList = ({title, year,releasedDate, country,poster,imdbRating, image})=>{
+const MovieList = ({ title, year, releasedDate, country, poster, imdbRating, image }) => {
+  return (
+    <div className="movieCard">
+      <div className="movieCardInner">
+        {/* Front side of the card */}
+        <div className="movieCardFront">
+        <img src={image} alt='image not loaded' className='imageStyle' />
+        <div className='movieDataStyle'>
+        <h4>{title}</h4>
+          <p><strong>Year:</strong> {year}</p>
+          <p><strong>Released:</strong> {releasedDate}</p>
+          <p><strong>Country:</strong> {country}</p>
+          <p><strong>IMDB Rating:</strong> {imdbRating}</p>
+        </div>
+        </div>
 
-    return (
-        <div >
-            <div className="movieListCard">
-            <img src={image} alt="Fetched from API" className='imageStyle'/>
-            <ul>
-                <li>Title: {title}</li>
-                <li>Year: {year}</li>
-                <li>Released date: {releasedDate}</li>
-                <li>Country : {country}</li>
-                <li>IMDB Rating : {imdbRating}</li>
-            </ul>
-            </div>
+        {/* Back side of the card */}
+        <div className="movieCardBack">
+
+          <img src={image} alt={title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
 
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default MovieList
+export default MovieList;

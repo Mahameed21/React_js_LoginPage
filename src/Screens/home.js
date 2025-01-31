@@ -58,6 +58,7 @@ const Home = () => {
   return (
     <div className="homeMainContainer">
       <h1 className="headerText">Showing Movies Data</h1>
+
       <div className="movieGrid">
         {movieData.map((movie, index) => {
           return (
@@ -75,6 +76,7 @@ const Home = () => {
           );
         })}
       </div>
+      
       <MovieModal
         isOpen={isModalOpen} 
         onClose={closeMovieModal} 
