@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import "../Styles/styles.css";
+import "../Styles/login.css";
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../context/context";
+import { useAuth } from "../context/context";
 import BannerImage from "../assets/background.jpg";
 
 
 
-const Login = ({onLogin}) => {
+const Login = () => {
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
 
-  const {storeUserData } = useUserContext()
+  const {userLogin } = useAuth()
 
   const navigate = useNavigate();
 
@@ -45,10 +45,9 @@ const Login = ({onLogin}) => {
     e.preventDefault();
     if (validate()) {
       const userData = {fullName, email, mobile};
-      storeUserData(userData)
+      userLogin(userData)
       console.log("Login Data:", { fullName, mobile, email });
-      navigate("/Home");
-      onLogin()
+      navigate("/");
     }
   };
 

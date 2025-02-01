@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useUserContext } from "../context/context";
+import { useAuth } from "../context/context";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import MovieList from "../Components/movieList";
@@ -9,7 +9,7 @@ import MovieModal from "../Components/MovieModal";
 const Home = () => {
   const movieApi = "https://mocki.io/v1/4e2642e7-b26c-4c8d-931c-d8393f1a3318";
   //  const route = useLocation();
-  const { userData } = useUserContext();
+  const { userData } = useAuth();
   console.log("userData :", userData);
 
   const [movieData, setMovieData] = useState([]);
@@ -58,7 +58,7 @@ const Home = () => {
   return (
     <div className="homeMainContainer">
       <h1 className="headerText">Showing Movies Data</h1>
-
+    
       <div className="movieGrid">
         {movieData.map((movie, index) => {
           return (

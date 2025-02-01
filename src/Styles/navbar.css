@@ -1,24 +1,37 @@
 .navbarContainer{
     width: '100%';
-    background-color: grey;
-    height: 100px;
+    background-color: #460073;
+    height: 50px;
     justify-content: flex-end;
     align-items: center;
     display: flex;
-    padding-right: 100px;
+    padding-right: 50px;
 }
 .navLink{
     color: white;
     text-decoration: none;
     color: white;
     font-size: 20px;
-    font-weight: bold;
-    margin-right: 10px;
+    font-weight:600;
+    padding: 10px 20px; /* Add padding for better spacing */
+    display: inline-block; /* Ensure the background applies correctly */
 }
 .active{
-    color: darkorange;
+    color: white;
+    background-color: #a100ff ;    
 }
 .navLink:hover{
-color: black;
+color: white;
 text-decoration: underline;
+}
+.logoutButton {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logoutButton:hover {
+    background-color: red;
+    color:white;
 }

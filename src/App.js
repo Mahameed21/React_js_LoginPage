@@ -6,28 +6,23 @@ import Profile from "./Screens/profile";
 import Navbar from "./Components/navbar";
 import { useState } from "react";
 import { UserProvider } from "./context/context";
-
-
+import ProtectedRoute from "./protectedRoute/protectedRoute";
 
 function App() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
   return (
     <UserProvider>
-    <Router>
-      {/* {isLoggedIn && <Navbar />} */}
-    <Navbar/>
-      <Routes>
-        {/* <Route path="/" element={<Login onLogin={handleLogin} />} /> */}
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+
+          <Route element={<ProtectedRoute />}>
+          <Route path="/profile" element={<Profile />} />
+          </Route>
+
+        </Routes>
+      </Router>
     </UserProvider>
   );
 }

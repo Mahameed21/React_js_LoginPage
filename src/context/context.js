@@ -2,24 +2,33 @@
 import React, { createContext, useState, useContext } from "react";
 
 // Create a context
-const UserContext = createContext();
+const AuthContext = createContext();
 
 // Create a provider component
 export const UserProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
 
-  const storeUserData = (data) => {
+  const userLogin = (data) => {
     setUserData(data);
+    localStorage.setItem("user", JSON.stringify(data));
   };
 
+  const userLogout = () => {
+    setUserData(null)
+    localStorage.removeItem("user");
+  };
+
+
   return (
-    <UserContext.Provider value={{ userData, storeUserData }}>
+    <AuthContext.Provider value={{ userData, userLogin, userLogout}}>
       {children}
-    </UserContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
 // Custom hook to access the context
-export const useUserContext = () => {
-  return useContext(UserContext);
-};
+// export const useAuthContext = () => {
+//   return useContext(AuthContext);
+// };
+
+export const useAuth = () => useContext(AuthContext);
