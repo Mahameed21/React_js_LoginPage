@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/login.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/context";
-import BannerImage from "../assets/background.jpg";
 
 
 
@@ -25,9 +24,11 @@ const Login = () => {
 
     if (!fullName) {
       newErrors.fullName = "full name is required";
-    } else if (!mobile || mobile.length <10) {
+    } else if (!mobile) {
       newErrors.mobile = "mobile number is required";
-    } else if (!email) {
+    } else if (mobile.length <10) {
+      newErrors.mobile = "Please enter 10 digit mobile number";
+    }else if (!email) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Invalid email format";
@@ -54,11 +55,13 @@ const Login = () => {
   return (
     <div className="loginMainContainer" >
       <h1 className="headerText">Login Form</h1>
+
       <div className="formOuterContainer">
         <form onSubmit={onSubmit} className="loginForm">
-          <div className="innerFormContainer">
+          <div className="innerLoginContainer">
+            
             <div className="labelContainer1">
-              <label className="labelText">Full Name</label> 
+              <label className="labelNameText">Full Name</label> 
               <input
                 type="text"
                 placeholder="Enter your full Name"
@@ -66,14 +69,14 @@ const Login = () => {
                   setFullName(e.target.value);
                   errors.fullName = "";
                 }}
-                className="nameInput"
+                className="nameInputStyle"
                 value={fullName}
               />
             </div>
-            <p className="errorMessage">{errors.fullName}</p>
+            <p className="loginErrorMessage">{errors.fullName}</p>
 
             <div className="labelContainer1">
-              <label className="labelText">Mobile</label>
+              <label className="labelNameText">Mobile</label>
 
               <input
                 type="text"
@@ -82,17 +85,17 @@ const Login = () => {
                   setMobile(e.target.value);
                   errors.mobile = "";
                 }}
-                className="nameInput"
+                className="nameInputStyle"
                 maxLength={10}
                 value={mobile}
               />
             </div>
 
-            <p className="errorMessage">{errors.mobile}</p>
+            <p className="loginErrorMessage">{errors.mobile}</p>
 
 
             <div className="labelContainer1">
-              <label className="labelText">Email</label>
+              <label className="labelNameText">Email</label>
 
               <input
                 type="email"
@@ -101,16 +104,16 @@ const Login = () => {
                   setEmail(e.target.value);
                   errors.email = "";
                 }}
-                className="nameInput"
+                className="nameInputStyle"
                 value={email}
               />
             </div>
 
-            <p className="errorMessage">{errors.email}</p>
+            <p className="loginErrorMessage">{errors.email}</p>
 
 
             <div className="labelContainer1">
-              <label className="labelText">Password</label>
+              <label className="labelNameText">Password</label>
 
               <div className="inputContainer">
                 <input
@@ -120,17 +123,20 @@ const Login = () => {
                     setPassword(e.target.value);
                     errors.password = "";
                   }}
-                  className="nameInput"
+                  className="nameInputStyle"
                   value={password}
                 />
               </div>
             </div>
-            <p className="errorMessage">{errors.password}</p>
+            <p className="loginErrorMessage">{errors.password}</p>
 
           </div>
-          <button className="submitButton" type="submit">Submit</button>
+          <button className="submitLoginButton" type="submit">Submit</button>
         </form>
+        <p className="donHaveAccount" >Don't have an account? {' '} <NavLink to='/signup' className='signUpLinkText'>Sign Up</NavLink></p>
+
       </div>
+                  
     </div>
   );
 };

@@ -20,19 +20,21 @@
   height: 220px;
   margin: auto;
   padding: 20px;
-  border: .5px solid skyblue;
+  border: .5px solid #a100ff;
   border-radius: 8px;
   box-shadow: 2px 2px 10px #a100ff;
   text-align: left;
+  margin-bottom: 10px;
 }
 .loginForm{
     display: flex;
   flex-direction: column;
 }
-.innerFormContainer{
+.innerLoginContainer{
     margin-bottom: 10px;
     display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .labelContainer1{
     display: flex;
@@ -42,40 +44,56 @@
     display: flex;
     flex-direction: column;
 }
-.labelText {
+.labelNameText {
   font-size: 20px;
   font-weight: bold;
-  margin-right: 10px;
   display:inline;
   margin-bottom: 5px;
   width: 110px;
+  margin-right: 5px;
+
 }
-.nameInput {
+.nameInputStyle {
   width: 200px;
   height: 25px;
   border: 1px solid grey;
   border-radius: 4px;
   padding-left: 5px;
 }
-.errorMessage{
-    color: red;
-    margin-top: -3px;
-}
-.submitButton{
-    width: 210px;
-    height: 40px;
+
+.submitLoginButton{
+    width: 120px;
+    height: 35px;
     justify-content: center;
     align-self: center;
     background-color: #460073;
     border: 1px solid #460073;
-    border-radius: 10px;
-    margin-left: 50px;
+    border-radius: 4px;
+    margin-left: 30px;
     color: white;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
 }
-.errorMessage{
+.loginErrorMessage{
   font-size: 10px;
   color: red;
   margin-left: 120px;
+  margin-top: -3px;
+}
+.donHaveAccount{
+  color: #460073;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin-left: 30px;
+}
+.signUpLinkText{
+  color: #460073;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight:600;
+}
+.signUpLinkText:hover{
+color: #a100ff;
+text-decoration: underline;
 }

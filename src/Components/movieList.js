@@ -9,7 +9,7 @@ const MovieList = ({ title, year, releasedDate, country, poster, imdbRating, ima
         <div className="movieCardFront">
         <img src={image} alt='image not loaded' className='imageStyle' />
         <div className='movieDataStyle'>
-        <h4>{title}</h4>
+        <h4 className='titleName'>{title}</h4>
           <p><strong>Year:</strong> {year}</p>
           <p><strong>Released:</strong> {releasedDate}</p>
           <p><strong>Country:</strong> {country}</p>

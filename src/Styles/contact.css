@@ -1,0 +1,113 @@
+.contactContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainContactBox{
+    flex-direction: row;
+    display: flex;
+    position: absolute;
+    margin-bottom: 350px;
+    
+}
+.contactBox{
+    width: 160px;
+    height: 150px;
+    background-color: white;
+    margin-left: 15px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding:5px
+}
+.innerIconView{
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin-top: 10px;
+}
+.locationIcon{
+    color: #a100ff;
+    font-size: 30px;
+}
+.locText1{
+    color: #460073;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5PX;
+}
+.locText{
+    color: #460073;
+    font-size: 12px;
+    font-weight:600;
+    margin-bottom: -5PX;
+}
+.contactPageView{
+    width: 600px;
+    height: 400px;
+    background-color: #a100ff;
+    margin-top: 80px;
+}
+.contactUsText{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top:80px;
+    margin-bottom: 10px;
+}
+.contactUsForm{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.innerFormContainer{
+    margin-bottom: 10px;
+    display: flex;
+  flex-direction: column;
+}
+.nameInput {
+  width: 350px;
+  height: 30px;
+  padding-left: 5px;
+  margin-bottom: 20px;
+  color: grey;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+.nameInput1 {
+    width: 350px;
+    height: 80px;
+    margin-bottom: 20px;
+    color: grey;
+    border: 1px solid white;
+    border-radius: 0px;
+    padding: 5px;
+  }
+.errorMessage{
+    color: red;
+    margin-top: -3px;
+}
+.submitButton{
+    width: 80px;
+    height: 30px;
+    justify-content: center;
+    align-self: center;
+    background-color: #a100ff;
+    border: 1px solid white;
+    border-radius: 0px;
+    margin-left: 0px;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+}
+.errorMessage{
+  font-size: 10px;
+  color: red;
+  margin-left: 0px;
+  margin-top: -15px;
+}

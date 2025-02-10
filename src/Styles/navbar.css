@@ -10,10 +10,10 @@
 .navLink{
     color: white;
     text-decoration: none;
-    color: white;
     font-size: 20px;
+    margin-right: 10px;
     font-weight:600;
-    padding: 10px 20px; /* Add padding for better spacing */
+    padding: 10px 15px; /* Add padding for better spacing */
     display: inline-block; /* Ensure the background applies correctly */
 }
 .active{
@@ -35,3 +35,53 @@ text-decoration: underline;
     background-color: red;
     color:white;
 }
+
+  .logoutIcon svg {
+    color: red;
+    font-size: 30px;
+    margin-top: 7px;
+    position: absolute;
+    cursor: pointer;
+  }
+  /* .logoutIcon  :hover{
+    font-size: 40px;
+    color: blue;
+  } */
+
+  .logoutContainer {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    display: inline;
+  }
+  
+  .logoutIcon {
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 8px;
+  }
+  
+  /* Initially hide the text */
+  .logoutText {
+    position: absolute;
+    bottom: -25px; /* Position below the icon */
+    background-color: #a100ff;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevents the tooltip from affecting interactions */
+    white-space: nowrap;
+    right: -9px;
+  }
+  
+  /* Show text only when hovering over the icon */
+  .logoutIcon:hover + .logoutText {
+    opacity: 1;
+  }
+  
